@@ -10,7 +10,7 @@ function transferpage() {
          <label>
            <p>Name:</p>
            <p>Bank Account:</p>
-           <input Bankaccount="Bank Account"/>
+           <input accountNumber="Bank Account"/>
            <p>Transfer Amount:</p>
            <input TransferAmount="Transfer Amount"/>
          </label>
