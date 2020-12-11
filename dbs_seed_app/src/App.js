@@ -63,6 +63,7 @@ function App() {
     email: "mockEmail",
     address: "mockAddress",
   });
+  
   const [errorInfo, setErrorInfo] = useState();
 
   const [username, setUsername] = useState("");
@@ -72,6 +73,7 @@ function App() {
 
   const login = useCallback(async () => {
     try {
+
       //call the api
 
       const result = await authAxios.post(`/techtrek2020/login`, {
