@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 
 export default class TransferPage extends React.Component{
   state = {
-    transfer: true,
+    loading: true,
     
   };
 
