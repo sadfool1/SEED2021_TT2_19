@@ -18,6 +18,7 @@ verifyToken = (req, res, next) => {
                 message: "ERROR: Failed to authorize JWT"
             });
         }
+        req.usedId = JSON.parse(decoded);
         req.userId = decoded.id;
         next();
     });
@@ -26,4 +27,5 @@ verifyToken = (req, res, next) => {
 const authJwt = {
     verifyToken: verifyToken
 };
+
 module.exports = authJwt;
