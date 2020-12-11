@@ -15,12 +15,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-
 const apiKey = "1pigYzAdHBepN1i5E1ga2Jdug12i4Mu3Ph8PYp15";
 
 const apiUrl = "https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/";
@@ -34,6 +28,19 @@ const authAxios = axios.create({
     Authorization: `Bearer ${jwtToken}`,
   },
 });
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -73,7 +80,6 @@ function App() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-
   const classes = useStyles();
 
   const login = useCallback(async () => {
@@ -111,8 +117,9 @@ function App() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
+          <Avatar className={classes.avatar}></Avatar>
           <Typography component="h1" variant="h5">
-            Registration
+            Sign in
           </Typography>
           <form
             className={classes.form}
@@ -121,37 +128,20 @@ function App() {
               e.preventDefault();
               submitHandler();
             }}>
-
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
               id="email"
-              label="EmailAddress"
+              label="Email Address"
               name="email"
               autoComplete="email"
               autoFocus
               onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="username"
-              label="Username"
-              type="username"
-              id="username"
-              autoComplete="current-username"
-              onChange={(e) => {
                 setUsername(e.target.value);
               }}
             />
-
             <TextField
               variant="outlined"
               margin="normal"
@@ -166,22 +156,49 @@ function App() {
                 setPassword(e.target.value);
               }}
             />
-
-
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="email"
+              label="email"
+              type="email"
+              id="email"
+              autoComplete="current-email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="red"
+              color="primary"
               className={classes.submit}>
-              Sign Up
+              Sign In
             </Button>
             <Grid container>
-
-
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
           </form>
         </div>
+        <Box mt={8}>
+          <Copyright />
+        </Box>
       </Container>
     </div>
   );
