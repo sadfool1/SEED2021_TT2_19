@@ -1,24 +1,38 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { render } from "react-dom";
 
-function transferpage() {
-  return(
-    <div className="abc">
-      <h1>Transfer Page</h1>
-      <form>
-      <fieldset>
-         <label>
-           <p>Name:</p>
-           <p>Bank Account:</p>
-           <input accountNumber="Bank Account"/>
-           <p>Transfer Amount:</p>
-           <input TransferAmount="Transfer Amount"/>
-         </label>
-       </fieldset>
-       <button type="submit">Transfer</button>
-      </form>
-    </div>
-  )
-}
+import { Col, Divider, Row, } from 'antd';
+import 'antd/dist/antd.css';
 
-export default transferpage;
+export default class Transfer extends React.Component{
+  state = {
+    loading: true,
+    person: null
+  };
+
+  async componentDidMount(){
+    const url = " ";
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({ person : data, loading: false});
+  }
+
+  render() {
+    return(
+      <div className="abc">
+        <h1>Transfer Page</h1>
+        <form>
+        <fieldset>
+          <label>
+            <p>Name:</p>
+            <p>Bank Account:</p>
+            <input accountNumber="Bank Account"/>
+            <p>Transfer Amount:</p>
+            <input TransferAmount="Transfer Amount"/>
+          </label>
+        </fieldset>
+        <button type="submit">Transfer</button>
+        </form>
+      </div>
+    )
+  }
