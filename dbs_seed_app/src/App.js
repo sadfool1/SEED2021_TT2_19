@@ -22,6 +22,7 @@ const apiUrl = "https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/";
 const jwtToken = "mockToken";
 
 const authAxios = axios.create({
+  
   baseURL: apiUrl,
   headers: {
     "x-api-key": `${apiKey}`,
