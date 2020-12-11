@@ -161,7 +161,7 @@ function App() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/Register" variant="body2">
+                <Link href="./Register" variant="body2">
                   {"Register"}
                 </Link>
               </Grid>
