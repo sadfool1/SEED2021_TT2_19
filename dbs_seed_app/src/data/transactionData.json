@@ -1,0 +1,20 @@
+[
+    {
+        "eGift": true,
+        "dateTime": "2020-03-28T23:27:36.713Z",
+        "custID": 19,
+        "expensesCat": "Transport",
+        "amount": 954.72,
+        "message": "Thanks. :)",
+        "payeeID": 12
+    },
+    {
+        "eGift": true,
+        "dateTime": "2020-10-21T18:28:23.506Z",
+        "custID": 15,
+        "expensesCat": "Insurance",
+        "amount": 160.32,
+        "message": "Thanks. :)",
+        "payeeID": 19
+    }
+]
