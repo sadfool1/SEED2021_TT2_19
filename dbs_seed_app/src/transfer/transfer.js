@@ -31,7 +31,7 @@ export default class Transfer extends React.Component{
             <input TransferAmount="Transfer Amount"/>
           </label>
         </fieldset>
-        <button type="submit">Transfer</button>
+        <button type="Submit">Transfer</button>
         </form>
       </div>
     )
