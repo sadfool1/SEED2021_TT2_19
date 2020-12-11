@@ -22,7 +22,7 @@ const apiUrl = "https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/";
 const jwtToken = "mockToken";
 
 const authAxios = axios.create({
-  
+
   baseURL: apiUrl,
   headers: {
     "x-api-key": `${apiKey}`,
@@ -162,7 +162,7 @@ function App() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="./Register" variant="body2">
+                <Link href="./register" variant="body2">
                   {"Register"}
                 </Link>
               </Grid>
