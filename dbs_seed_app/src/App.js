@@ -29,18 +29,6 @@ const authAxios = axios.create({
   },
 });
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -103,14 +91,14 @@ function App() {
 
   return (
     <div className="App">
-      {/* <button onClick={() => login()}> Login </button>
+      <button onClick={() => login()}> Login </button>
 
       <div>
         {Object.entries(customerInfo).map((info) => {
           return <ul key={info[1]}>{`${info[0]} : ${info[1]}`}</ul>;
         })}
       </div>
-      <p>{errorInfo}</p> */}
+      <p>{errorInfo}</p>
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -180,9 +168,6 @@ function App() {
             </Grid>
           </form>
         </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
       </Container>
     </div>
   );
