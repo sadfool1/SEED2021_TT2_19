@@ -45,6 +45,11 @@ export default class TransferPage extends React.Component{
               </tr>
               <p></p>
               <tr>
+                <th>Account Balance:</th>
+                <td>${this.state.person.availableBal}</td>
+              </tr>
+              <p></p> 
+              <tr>
                 <th>Transaction No:</th>
                 <td>{Math.random}</td>
               </tr>
